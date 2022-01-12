@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="todo"
+            type="com.seip.todoapp.entities.Todo" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        app:contentPadding="6dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                app:setpriotityIcon="@{todo.priority}"
+                android:src="@drawable/ic_todo_priority_high_24">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/todoNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@{todo.name}"
+                android:layout_marginTop="10dp"
+                android:hint="What to do?"></TextView>
+
+            <TextView
+                android:layout_below="@+id/todoNameTV"
+                android:id="@+id/todoDateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:text="@{String.valueOf(todo.date)}"
+                android:hint="Date"></TextView>
+
+            <TextView
+                android:layout_below="@id/todoNameTV"
+                android:layout_toRightOf="@+id/todoDateTV"
+                android:id="@+id/todoTimeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:text="@{String.valueOf(todo.time)}"
+                android:hint="Time"></TextView>
+
+            <CheckBox
+                android:id="@+id/rowTodoComleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+            </CheckBox>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
+
